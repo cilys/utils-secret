@@ -41,12 +41,16 @@ public class AESSortTools extends AESTools {
     public byte[] encrypt(byte[] dataBytes, String pwd) {
         byte[] rs = super.encrypt(dataBytes, pwd);
         if (rs != null && rs.length > 2) {
-            System.out.println("原始加密数据：" + Arrays.toString(rs));
+            if (debug) {
+                System.out.println("原始加密数据：" + Arrays.toString(rs));
+            }
             byte b0 = rs[0];
             byte b1 = rs[1];
             rs[0] = b1;
             rs[1] = b0;
-            System.out.println("处理后的加密数据：" + Arrays.toString(rs));
+            if (debug) {
+                System.out.println("处理后的加密数据：" + Arrays.toString(rs));
+            }
         }
         return rs;
     }
@@ -54,12 +58,16 @@ public class AESSortTools extends AESTools {
     @Override
     public byte[] decrypt(byte[] byteDatas, String pwd) {
         if (byteDatas != null && byteDatas.length > 2) {
-            System.out.println("原始加密数据：" + Arrays.toString(byteDatas));
+            if (debug) {
+                System.out.println("原始加密数据：" + Arrays.toString(byteDatas));
+            }
             byte b0 = byteDatas[0];
             byte b1 = byteDatas[1];
             byteDatas[0] = b1;
             byteDatas[1] = b0;
-            System.out.println("处理后的加密数据：" + Arrays.toString(byteDatas));
+            if (debug) {
+                System.out.println("处理后的加密数据：" + Arrays.toString(byteDatas));
+            }
         }
         return super.decrypt(byteDatas, pwd);
     }

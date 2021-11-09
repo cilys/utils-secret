@@ -13,7 +13,7 @@ import sun.misc.BASE64Encoder;
 public class AESTools implements EncryptStringImpl, DecryptStringImpl, EncryptByteImpl, DecryptByteImpl {
     public static String CHARSET = "UTF-8";
 
-    private boolean debug = false;
+    protected boolean debug = false;
 
     public AESTools() {
         debug = false;
