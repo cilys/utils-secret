@@ -1,14 +1,13 @@
 package com.cilys.utils.secret.aes;
 
 import com.cilys.utils.secret.java.BASE64Decoder;
+import com.cilys.utils.secret.java.BASE64Encoder;
 
 import java.util.Arrays;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-
-import sun.misc.BASE64Encoder;
 
 public class AESTools implements EncryptStringImpl, DecryptStringImpl, EncryptByteImpl, DecryptByteImpl {
     public static String CHARSET = "UTF-8";
